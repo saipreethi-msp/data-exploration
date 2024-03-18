@@ -5,7 +5,6 @@ import pandas as pd
 
 
 from streamlit_pandas_profiling import st_profile_report
-from pydantic_settings import BaseSettings
 
 # load data 
 st.title("Exploration App")
