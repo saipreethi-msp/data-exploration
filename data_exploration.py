@@ -1,6 +1,7 @@
 import plotly.express as px
 import pandas as pd 
-import streamlit as st 
+import streamlit as st
+import pandas_profiling
 
 
 from streamlit_pandas_profiling import st_profile_report
@@ -18,9 +19,8 @@ if options == "Profile Report":
         
         # Data Display
         st.write(df)
-
-        pr = df.profile_report()
-        st_profile_report(pr)
+        profile = pandas_profiling.ProfileReport(df)
+        print(profile)
 
         # User inputs for plot customization
         x_axis_val = st.selectbox('Select the X axis', options=df.columns)
